@@ -22,7 +22,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="style.css">
     </head>
     <body class="fondo">
-        <aside class="menu-lateral">
+        <nav class="menu-lateral">
             <div class="icono">
                 <i><!--icono del programa--></i>
             </div>
@@ -47,6 +47,6 @@ if (!isset($_SESSION['username'])) {
                 <input type="submit" value="Agregar Socios" class="menu-lateral--btn"/>
             </form>
             <a href="logout.php" class="menu-lateral--form menu-lateral--btn-out">Cerrar Sesión</a>
-        </aside>
+        </nav>
     </body>
 </html>
