@@ -103,3 +103,10 @@ label{
     top: 10%;
     margin-right: 3px;
 }
+.icono{
+    text-align: center;
+}
+.icono-reidex{
+    width: 48px;
+    fill: aqua;
+}
