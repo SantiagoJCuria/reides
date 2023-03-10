@@ -8,7 +8,7 @@
 .fondo{
     height: 100vh;
     width: 100%;
-    background-image: radial-gradient(blue, black);
+    background-color: #1f1f29;
     padding: 0;
 }
 .contenedor {
@@ -20,6 +20,7 @@
     background-color: whitesmoke;
     padding: 10px;
     border-radius: 10px;
+    width: 25%;
 }
 .form{
     display: flex;
@@ -32,13 +33,13 @@
     text-align: start;
     font-size: 0.7rem;
     margin-bottom: 10px;
-    color: blue;
+    color: #0d6efd;
 }
 .titulo-principal{
     font-weight: bold;
     font-size: 2rem;
     font-family: 'Oswald', sans-serif;
-    color: blue;
+    color: #0d6efd;
 }
 .anadir {
 min-height: calc(1.5em + .5rem + calc(var(--bs-border-width) * 2));
@@ -57,7 +58,7 @@ background-clip: padding-box;
 border: var(--bs-border-width) solid var(--bs-border-color);
 }
 .anadir::placeholder {
-    color: blue;
+    color: #003f9e;
 }
 label{
     font-family: 'Roboto Mono', monospace;   
@@ -79,9 +80,24 @@ label{
     background-color: transparent;
     color: white;
     border: none;
-    margin-left: 10%;
 }
 .menu-lateral--form {
     width: 100%;
     justify-content: center;
+    margin-left: 10%;
+}
+.menu-lateral--btn-out {
+   background-color: aqua;
+   color: white;
+   padding: 10px; 
+   border-radius: 40px;
+   text-align: center;
+   width: 60%;
+}
+.menu-lateral--icon{
+    width: 24px;
+    fill: white;
+    position: relative;
+    top: 10%;
+    margin-right: 3px;
 }

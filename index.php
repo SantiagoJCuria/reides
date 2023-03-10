@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 			<h1 class="titulo-principal">Iniciar Sesión</h1>
 			<div class="inputs">
 				<label for="email">Usuario</label>
-				<input type="email" placeholder="Email" name="email" value="<?php echo $_POST['email']; ?>" class='anad	ir' required>
+				<input type="email" placeholder="Email" name="email" value="<?php echo $_POST['email']; ?>" class='anadir' required>
 			</div>
 			<div class="inputs">
 				<label for="password">Contraseña</label>
