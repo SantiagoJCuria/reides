@@ -28,23 +28,25 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Programita</title>
+  <link rel="stylesheet" href="./css/style.css">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 </head>
   <body data-spy="scroll" data-offset="0" data-target="#navigation">
 
-  <div class="container">
+  	<div class="container">
 		<form action="" method="POST" class="login-email">
-			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Iniciar Sesión</p>
+		<p>Iniciar Sesión</p>
 			<div class="input-group">
+				<label for="email">Usuario</label>
 				<input type="email" placeholder="Email" name="email" value="<?php echo $_POST['email']; ?>" class='anadir' required>
 			</div>
 			<div class="input-group">
+				<label for="password">Contraseña</label>
 				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" class='anadir'  required>
 			</div>
 			<div class="input-group">
