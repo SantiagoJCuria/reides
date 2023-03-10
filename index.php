@@ -30,15 +30,15 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Programita</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <title>Programa</title>
+  <link rel="stylesheet" href="./style.css">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 </head>
   <body data-spy="scroll" data-offset="0" data-target="#navigation">
 
-  	<div class="container">
+  	<div class="contenedor">
 		<form action="" method="POST" class="login-email">
 		<p>Iniciar Sesión</p>
 			<div class="input-group">
