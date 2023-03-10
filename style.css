@@ -1,6 +1,14 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Oxygen:wght@300&family=Roboto+Mono:wght@300&display=swap');
+*{    
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    
+}
+.fondo{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(blue, black);
     padding: 0;
 }
 .contenedor {
@@ -9,6 +17,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
 }
 .form{
     display: flex;
@@ -16,4 +27,61 @@
 }
 .inputs{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    color: blue;
+}
+.titulo-principal{
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    color: blue;
+}
+.anadir {
+min-height: calc(1.5em + .5rem + calc(var(--bs-border-width) * 2));
+padding: .25rem .5rem;
+font-size: .875rem;
+border-radius: .25rem;
+display: block;
+width: 100%;
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: var(--bs-body-color);
+background-color: var(--bs-form-control-bg);
+background-clip: padding-box;
+border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.anadir::placeholder {
+    color: blue;
+}
+label{
+    font-family: 'Roboto Mono', monospace;   
+}
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    width: 25%;
+    text-align: start;
+    height: 100vh;
+    font-size: 1.8rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+}
+.menu-lateral--btn{
+    background-color: transparent;
+    color: white;
+    border: none;
+    margin-left: 10%;
+}
+.menu-lateral--form {
+    width: 100%;
+    justify-content: center;
 }
