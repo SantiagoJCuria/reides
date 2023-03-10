@@ -82,10 +82,14 @@ label{
     border: none;
 }
 .menu-lateral--form {
-    width: 100%;
+    width: 60%;
     justify-content: center;
     margin-left: 10%;
     font-family: 'Oxygen', sans-serif;
+    padding: 10px;
+}
+.menu-lateral--form:hover{
+    background-color: grey;
 }
 .menu-lateral--btn-out {
    background-color: aqua;
@@ -108,5 +112,5 @@ label{
 }
 .icono-reidex{
     width: 48px;
-    fill: aqua;
+    fill: #0d6efd;
 }
