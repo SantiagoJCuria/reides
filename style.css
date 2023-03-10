@@ -137,3 +137,18 @@ label{
     color: white;
     text-align: center;
 }
+.principal--titulo-pagina {
+    background-color: #0d6efd;
+    width: 100%;
+  
+}
+.principal--pay {
+    display: flex;
+}
+.principal--pay button {
+    width: 20%;
+    background-color: #0d6efd;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 2px;
+}
