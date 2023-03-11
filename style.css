@@ -125,6 +125,8 @@ label{
 }
 .principal {
     width: 75%;
+    height: 100%;
+    overflow: auto;
 }
 .principal--informacion-balance {
     display: flex;
@@ -158,6 +160,7 @@ label{
 .principal--texto{
     margin-top: 10px;
     display: flex;
+    width: 90%;
 }
 .principal--texto button{
     background-color: #0d6efd;
@@ -183,5 +186,12 @@ label{
 .principal--add-pay select{
     width: 100%;
     color: grey;
-    padding: 3px;
+    padding: 5px;
+    background-color: white;
+    border: 0;
 }
+.principal--add-pay-contenedor {
+    display: flex;
+    flex-direction: column;
+}
+

@@ -126,8 +126,9 @@ $frm = $_POST;
                     <input class="form-control form-control-sm" type="text" id="buscar" name="buscar" placeholder="Buscar Socio"></input>
                     <button type="submit" id="busqueda" name="busqueda">Buscar</button>
                 </form>
-                <?php if($socio != "Nosocio") : ?>
                 <div class="principal--texto">
+                <?php if($socio != "Nosocio") : ?>
+                
                     <p class="principal--parrafo"> No es socio? <a href="../socios/agregar_socio.php"> Agregar</a> O</p> 
                     <?php endif; ?>
                     <form action="" method="POST">
@@ -140,7 +141,7 @@ $frm = $_POST;
                         </button>
                 </div>
                 </form>
-                <form action="" method="POST" class="form-check">
+                <form class="form-problema" action="" method="POST" class="form-check">
                     <h4>Seleccionar Caracter</h4>
                     <input class="form-check-input" type="radio" id="ing" name="caracter" value="Ingreso" checked>
                     <label class="form-check-label" for="Ingreso">Ingreso</label>
@@ -192,6 +193,7 @@ $frm = $_POST;
 
                 ?>
             </div>
+            
         </section>
     </body>
 </html>
