@@ -194,4 +194,11 @@ label{
     display: flex;
     flex-direction: column;
 }
-
+.formacion-doble{
+    display: flex;
+    width: 100%;
+    gap: 5px;
+}
+.formacion-doble--elemento{
+    width: 50%;
+}
