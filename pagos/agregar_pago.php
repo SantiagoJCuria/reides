@@ -118,32 +118,34 @@ $frm = $_POST;
             <a href="logout.php" class="menu-lateral--form menu-lateral--btn-out">Cerrar Sesión</a>
         </nav>
         <section class="principal">
-            <div class="principal--contenedor">
+            <div class="principal--add-pay">
                 <div class="principal--titulo-pagina">
                     <h3>Añadir Pago</h3>
                 </div>
                 <form action="" method="POST" class="principal--pay">
                     <input class="form-control form-control-sm" type="text" id="buscar" name="buscar" placeholder="Buscar Socio"></input>
-                    <button type="submit" id="busqueda" name="busqueda">Buscar</button></p>
+                    <button type="submit" id="busqueda" name="busqueda">Buscar</button>
                 </form>
-                <?php if($socio != "Nosocio") : ?> 
-                No es socio?<a href="../socios/agregar_socio.php"> Agregar</a> O 
-                <?php endif; ?>
-                <form action="" method="POST">
-                    <input type="hidden" id="socio" name="socio"
-                    <?php if($socio != "Nosocio") : ?> value="Nosocio"  <?php endif; ?>
-                    <?php if($socio == "Nosocio") : ?> value="Socio"  <?php endif; ?>></input>
-                    <button type="submit" id="Nosocio" name="Nosocio">
-                        <?php if($socio != "Nosocio") : ?> Ingresar como No socio <?php endif; ?>
-                        <?php if($socio == "Nosocio") : ?> Ingresar como Socio <?php endif; ?>
-                    </button></p>
+                <?php if($socio != "Nosocio") : ?>
+                <div class="principal--texto">
+                    <p class="principal--parrafo"> No es socio? <a href="../socios/agregar_socio.php"> Agregar</a> O</p> 
+                    <?php endif; ?>
+                    <form action="" method="POST">
+                        <input type="hidden" id="socio" name="socio"
+                        <?php if($socio != "Nosocio") : ?> value="Nosocio"  <?php endif; ?>
+                        <?php if($socio == "Nosocio") : ?> value="Socio"  <?php endif; ?>></input>
+                        <button class="btn btn-primary btn-sm" type="submit" id="Nosocio" name="Nosocio">
+                            <?php if($socio != "Nosocio") : ?> Ingresar como No socio <?php endif; ?>
+                            <?php if($socio == "Nosocio") : ?> Ingresar como Socio <?php endif; ?>
+                        </button>
+                </div>
                 </form>
-                <form action="" method="POST">
+                <form action="" method="POST" class="form-check">
                     <h4>Seleccionar Caracter</h4>
-                    <input type="radio" id="ing" name="caracter" value="Ingreso" checked>
-                    <label for="Ingreso">Ingreso</label>
-                    <input type="radio" id="egr" name="caracter" value="Egreso">
-                    <label for="Egreso">Egreso</label>
+                    <input class="form-check-input" type="radio" id="ing" name="caracter" value="Ingreso" checked>
+                    <label class="form-check-label" for="Ingreso">Ingreso</label>
+                    <input class="form-check-input" type="radio" id="egr" name="caracter" value="Egreso">
+                    <label class="form-check-label" for="Egreso">Egreso</label>
                     <?php if($socio != "Nosocio") : ?> 
                     <h4>Seleccionar Socio</h4>
                     <select id="id_socio" name="id_socio" required="true">
@@ -179,7 +181,8 @@ $frm = $_POST;
                 <input type="text" id="valor" name="valor" placeholder="Valor:"></input></p>
                 <h4>Ingresar Motivo</h4>
                 <input type="text" id="motivo" name="motivo" required="true" placeholder="Motivo"></input></p>
-                <button type="submit" id="submit" name="submit">Agregar Pago</button></form>
+                <button class="btn boton" type="submit" id="submit" name="submit">Agregar Pago</button>
+            </form>
             
             <?
 

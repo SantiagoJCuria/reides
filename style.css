@@ -140,6 +140,9 @@ label{
 .principal--titulo-pagina {
     background-color: #0d6efd;
     width: 100%;
+    padding: 1px;
+    margin-bottom: 10px;
+    text-align: center;
   
 }
 .principal--pay {
@@ -151,4 +154,29 @@ label{
     border: 0px;
     border-radius: 5px;
     margin-left: 2px;
+}
+.principal--texto{
+    margin-top: 10px;
+    display: flex;
+}
+.principal--texto button{
+    background-color: #0d6efd;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 2px;
+    position: relative;
+    bottom: 3px;
+}
+.principal--add-pay{
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    color: white;
+}
+.boton{
+    background-color: #0d6efd;
+    border: 0px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1.5rem;
 }
