@@ -148,7 +148,7 @@ $frm = $_POST;
                     <label class="form-check-label" for="Egreso">Egreso</label>
                     <?php if($socio != "Nosocio") : ?> 
                     <h4>Seleccionar Socio</h4>
-                    <select id="id_socio" name="id_socio" required="true">
+                    <select class="form-select" id="id_socio" name="id_socio" required="true">
                     <option value="">Seleccionar</option>
                     <?php
                     $sql= "SELECT * from socios";
@@ -173,14 +173,14 @@ $frm = $_POST;
                 </select>
                 <?php endif; ?>  <?php if($socio == "Nosocio") : ?> 
                 <h4>Ingresar Nombre</h4>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre:"></input></p>
+                <input class="form-control form-control-sm" type="text" id="nombre" name="nombre" placeholder="Nombre:"></input></p>
                 <?php endif; ?>
                 <h4>Ingresar Valor Numerico</h4>
-                <input type="number" id="valor_num" name="valor_num" required="true" placeholder="Valor numerico" step=".01"></input></p>
+                <input class="form-control form-control-sm" type="number" id="valor_num" name="valor_num" required="true" placeholder="Valor numerico" step=".01"></input></p>
                 <h4>Ingresar Valor</h4>
-                <input type="text" id="valor" name="valor" placeholder="Valor:"></input></p>
+                <input class="form-control form-control-sm" type="text" id="valor" name="valor" placeholder="Valor:"></input></p>
                 <h4>Ingresar Motivo</h4>
-                <input type="text" id="motivo" name="motivo" required="true" placeholder="Motivo"></input></p>
+                <input class="form-control form-control-sm" type="text" id="motivo" name="motivo" required="true" placeholder="Motivo"></input></p>
                 <button class="btn boton" type="submit" id="submit" name="submit">Agregar Pago</button>
             </form>
             

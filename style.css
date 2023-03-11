@@ -180,3 +180,8 @@ label{
     margin-top: 10px;
     font-size: 1.5rem;
 }
+.principal--add-pay select{
+    width: 100%;
+    color: grey;
+    padding: 3px;
+}
