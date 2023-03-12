@@ -35,6 +35,7 @@ if(isset($_GET["data"]))
       $nacimiento_t = ($row['fecha_nac_tutor']);
       $ecivil_t = ($row['estado_tutor']);
       $profesion_t = ($row['profesion_tutor']);
+      $_SESSION['$Qr'] =($row['qr']);
     }
 }
 if (isset($_POST['submit'])) {
@@ -261,6 +262,7 @@ $frm = $_POST;
     }
     ?>
     <a href="../main.php" class="btn btn-primary rounded"><img src="../volver.png" alt="atras" style="width:32px"></a>
+    <a href="./qr.php" class="btn btn-primary rounded">Generar QR</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>

@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
 }
 require_once '../phpqrcode/qrlib.php';
 $codeContents = $_SESSION['$Qr'];
-QRcode::png($codeContents, '007_4.png', QR_ECLEVEL_L, 20);
+QRcode::png($codeContents, 'qr.png', QR_ECLEVEL_L, 20);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,7 @@ QRcode::png($codeContents, '007_4.png', QR_ECLEVEL_L, 20);
   <meta content="" name="description">
 </head>
   <body class="fondo">
-  <img style="position: absolute;left: 50%;top:  50%;transform: translate(-50%, -50%);" src="007_4.png"/>
+  <img style="position: absolute;left: 50%;top:  50%;transform: translate(-50%, -50%);" src="qr.png"/>
+  
  </body>
 </html>
