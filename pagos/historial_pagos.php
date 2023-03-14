@@ -179,23 +179,30 @@ $caracter=$_SESSION['$caracter'];
 
     
 
-             <?php
+<?php
              $sql= "SELECT  Id, Id_Socio, STR_TO_DATE(fecha, '%d/%m/%Y') as fechaformato, nombre, val_num, motivo, Caracter from pagos WHERE val_num <> ''";
+             $sqlxcel= "SELECT  * from pagos WHERE val_num <> ''";
              if ($nombre != '' || $id != '' ||$DNI != '' ||$desde != '' ||$fecha != '' ||$caracter != '') {
                 $sql .= " AND Id_Socio LIKE '%$id%' AND nombre LIKE '%$nombre%' 
                 AND fecha LIKE '%$fecha%'  AND Caracter LIKE '%$caracter%' AND motivo LIKE '%$motivo%'";
                // $sql .= "    ";
+               $sqlxcel .= " AND Id_Socio LIKE '%$id%' AND nombre LIKE '%$nombre%' 
+                AND fecha LIKE '%$fecha%'  AND Caracter LIKE '%$caracter%' AND motivo LIKE '%$motivo%'";
                }
              if ($filtrar == "Id_Socio" || $filtrar == "val_num" ) {
                 $sql .= " ORDER BY $filtrar + 0";
+                $sqlxcel .= " ORDER BY $filtrar + 0";
             } else if ($filtrar == "nombre" || $filtrar == "fechaformato"|| $filtrar == "motivo"|| $filtrar == "Caracter" ){
                 $sql .= " ORDER BY $filtrar";
+                $sqlxcel .= " ORDER BY $filtrar";
             }
             if (isset($filtrar)) {
-                $sql .= " $orden"; 
+                $sql .= " $orden";
+                $sqlxcel .= " $orden"; 
             }
                 //echo $sql;
              $result = mysqli_query($conn,$sql);
+             $_SESSION['$excel_pagos'] = $sqlxcel;
             if ($result->num_rows > 0) {
                 echo "<table class='table'><tr><th>   Num. Socio   </th><th>   Nombre   </th><th>   Valor   </th><th>   Fecha   </th><th>   Motivo   </th><th>   Caracter   </th><th>      </th></tr>";
     // output data of each row
@@ -219,6 +226,7 @@ $caracter=$_SESSION['$caracter'];
                     }
               
 ?>
+    <a href="./exportar_pagos.php">Exportar a Excel</a>
     </div>
     </section>
     </body>

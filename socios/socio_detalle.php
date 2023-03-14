@@ -35,6 +35,7 @@ if(isset($_GET["data"]))
       $nacimiento_t = ($row['fecha_nac_tutor']);
       $ecivil_t = ($row['estado_tutor']);
       $profesion_t = ($row['profesion_tutor']);
+      $_SESSION['$Qr'] =($row['qr']);
     }
 }
 if (isset($_POST['submit'])) {
@@ -247,6 +248,7 @@ $frm = $_POST;
   <button type="submit" class="btn btn-primary">Eliminar socio</button>
 
   </form>
+  <a href="./qr.php" class="btn btn-primary rounded">Generar QR</a>
     <?
 
 

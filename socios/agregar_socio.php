@@ -30,7 +30,12 @@ if (isset($_POST['submit'])) {
     $nacimiento_t = ($_POST['nacimiento-t']);
     $ecivil_t = ($_POST['ecivil-t']);
     $profesion_t = ($_POST['profesion-t']);
-    $sql4 = "SELECT * FROM socios WHERE nombre = '$nombre' OR Id = '$id' OR DNI = '$dni'";
+    $qruery = "SELECT LEFT(UUID(), 5) FROM socios";
+    $resultqr = mysqli_query($conn, $qruery);
+    $rowqr = mysqli_fetch_array($resultqr);
+    $qr = $rowqr[0];
+    //echo "<script>alert('$qr')</script>";
+    $sql4 = "SELECT * FROM socios WHERE nombre = '$nombre' OR Id = '$id' OR DNI = '$dni' OR qr = '$qr'";
     $result4 = $conn->query($sql4);
     if ($result4->num_rows > 0) {
         echo "<script>alert('Ya Existe un Socio con ese nombre, DNI, o N° Socio')</script>";
@@ -42,9 +47,9 @@ if (isset($_POST['submit'])) {
     $sql ="INSERT INTO socios (Id, nombre, fecha, DNI, Domicilio, Localidad, Provincia, Telefono, 
     Celular, Mail, nacionalidad_tutor, Nacionalidad, Fecha_nacimiento, Estado_Civil, Profesion, 
     nombre_tutor, telefono_tutor, estado_tutor, profesion_tutor, DNI_tutor, celular_tutor, 
-    fecha_nac_tutor) VALUES ('$id','$nombre','$fecha','$dni','$domicilio','$localidad',
+    fecha_nac_tutor, qr) VALUES ('$id','$nombre','$fecha','$dni','$domicilio','$localidad',
     '$provincia','$telefono','$celular','$mail','$nacionalidad_t',' $nacionalidad','$nacimiento','$ecivil',
-    '$profesion','$apellido_t','$telefono_t','$ecivil_t','$profesion_t','$DNI_t','$celular_t','$nacimiento_t')";
+    '$profesion','$apellido_t','$telefono_t','$ecivil_t','$profesion_t','$DNI_t','$celular_t','$nacimiento_t', '$qr')";
      //"INSERT into socios (fecha, nombre, Id, DNI) values ('$fecha','$nombre','$id','$dni')";
 	$result = mysqli_query($conn, $sql);
     if($result)

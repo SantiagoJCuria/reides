@@ -21,6 +21,7 @@ if (isset($_POST['ordenar'])) {
   $_SESSION['$desde'] = $_POST['desde'];
   $_SESSION['$fecha'] = $_POST['fecha'];
   $_SESSION['$caracter'] = $_POST['Caracter'];
+  $_SESSION['$qr'] = $_POST['qr'];
 }
 if (isset($_POST['borrar'])) 
 {
@@ -31,6 +32,7 @@ if (isset($_POST['borrar']))
  $_SESSION['$desde'] = "";
  $_SESSION['$fecha'] = "";
  $_SESSION['$caracter'] = "";
+ $_SESSION['$qr'] = "";
 }
 $busqueda = $_SESSION['$busqueda'];
 $nombre=$_SESSION['$nombre'];
@@ -39,6 +41,8 @@ $DNI=$_SESSION['$DNI'];
 $desde=$_SESSION['$desde'];
 $fecha=$_SESSION['$fecha'];
 $caracter=$_SESSION['$caracter'];
+$qr=$_SESSION['$qr'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,6 +149,10 @@ $caracter=$_SESSION['$caracter'];
       <label for="inputZip">Caracter</label>
       <input type="text" class="form-control" id="p.Caracter" name="Caracter" value="<?php echo $caracter ?>">
     </div>  
+    <div class="form-group col-md-3">
+      <label for="inputZip">Codigo QR</label>
+      <input type="text" class="form-control" id="s.qr" name="qr" value="<?php echo $qr ?>">
+    </div>  
 </div>
   <div class="form-group col-md-10">
   <button type="submit" id="busqueda" name="busqueda" class="btn btn-primary">Filtrar</button>
@@ -182,26 +190,33 @@ $caracter=$_SESSION['$caracter'];
 
              <?php
 
-             $sql= "SELECT s.Id, s.nombre, s.DNI, STR_TO_DATE(s.fecha, '%d/%m/%Y') as desde, STR_TO_DATE(p.fecha, '%d/%m/%Y') as fecha, p.val_num, p.motivo, p.Caracter FROM socios s JOIN pagos p ON s.Id = p.Id_Socio 
+              $sql= "SELECT s.Id, s.nombre, s.qr, s.DNI, STR_TO_DATE(s.fecha, '%d/%m/%Y') as desde, STR_TO_DATE(p.fecha, '%d/%m/%Y') as fecha, p.val_num, p.motivo, p.Caracter FROM socios s JOIN pagos p ON s.Id = p.Id_Socio 
              WHERE p.fecha = (SELECT MAX(fecha) FROM pagos WHERE Id_socio = s.Id)";
-               
+             $sqlxcel= "SELECT * FROM socios ";
                if ($nombre != '' || $id != '' ||$DNI != '' ||$desde != '' ||$fecha != '' ||$caracter != '') {
                 $sql .= " AND s.nombre LIKE '%$nombre%' AND s.DNI LIKE '%$DNI%' 
                 AND s.fecha LIKE '%$desde%' AND p.fecha LIKE '%$fecha%' AND p.Caracter LIKE '%$caracter%' AND s.Id LIKE '%$id%'";
-               // $sql .= "    ";
+                $sqlxcel .= " WHERE nombre LIKE '%$nombre%' AND DNI LIKE '%$DNI%' 
+                AND fecha LIKE '%$desde%' AND Id LIKE '%$id%'";
                }
-
+               if ($qr != '' ) {
+                $sql .= " AND s.qr = '$qr'";
+               }
 
              $sql .="GROUP BY s.Id";
             if ($filtrar == "s.Id" || $filtrar == "s.DNI"|| $filtrar == "p.val_num" ) {
                 $sql .= " ORDER BY $filtrar + 0";
+                $sqlxcel .= " ORDER BY $filtrar + 0";
             } else if ($filtrar == "s.nombre" || $filtrar == "desde"|| $filtrar == "fecha"|| $filtrar == "p.motivo"|| $filtrar == "p.Caracter" ){
                 $sql .= " ORDER BY $filtrar";
+                $sqlxcel .= " ORDER BY $filtrar";
             }
 
-            $sql .= " $orden";             
+            $sql .= " $orden";
+            $sqlxcel .= " $orden";           
             //echo $sql;
              $result = mysqli_query($conn,$sql);
+             $_SESSION['$excel_socios'] = $sqlxcel;
             if ($result->num_rows > 0) {
                 echo "<table class='table'><tr><th>   Id   </th><th>   Nombre   </th><th>   DNI   </th><th>   Socio desde  </th><th>   Ultimo pago  </th><th>   Fecha </th><th>   Motivo </th><th>   Caracter </th></tr>";
     // output data of each row
@@ -227,6 +242,7 @@ $caracter=$_SESSION['$caracter'];
                     }
               
 ?>
+    <a href="./exportar_socios.php">Exportar a Excel</a>
     </div>
     </section>
     </body>
