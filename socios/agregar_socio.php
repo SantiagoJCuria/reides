@@ -156,7 +156,7 @@ $frm = $_POST;
     </div>
     <form action="" method="post" class="mb-3">
     <label for="id" class="form-label">N° de Socio</label>
-      <input type="text" class="form-control" id="id" placeholder="N° Socio" name="id" require="true" value=<?=$valor_maximo?>>
+      <input type="text" class="form-control dato" id="id" placeholder="N° Socio" name="id" require="true" value=<?=$valor_maximo?>>
   
     <label for="nombre" class="form-label">Nombre Completo</label>
     <input type="Text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" require="true">
