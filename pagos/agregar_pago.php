@@ -123,7 +123,7 @@ $frm = $_POST;
                     <h3>Añadir Pago</h3>
                 </div>
                 <form action="" method="POST" class="principal--pay">
-                    <input class="form-control form-control-sm" type="text" id="buscar" name="buscar" placeholder="Buscar Socio"></input>
+                    <input class="form-control form-control-sm dato" type="text" id="buscar" name="buscar" placeholder="Buscar Socio"></input>
                     <button type="submit" id="busqueda" name="busqueda">Buscar</button>
                 </form>
                 <div class="principal--texto">
@@ -149,8 +149,8 @@ $frm = $_POST;
                     <label class="form-check-label" for="Egreso">Egreso</label>
                     <?php if($socio != "Nosocio") : ?> 
                     <h4>Seleccionar Socio</h4>
-                    <select class="form-select" id="id_socio" name="id_socio" required="true">
-                    <option value="">Seleccionar</option>
+                    <select class="form-select dato" id="id_socio" name="id_socio" required="true">
+                    <option value="" class="dato">Seleccionar</option>
                     <?php
                     $sql= "SELECT * from socios";
                     if (isset($_POST['busqueda'])) 
@@ -163,7 +163,7 @@ $frm = $_POST;
                     {
                     while($rowData = mysqli_fetch_array($resul_socios))
                         { ?>
-                            <option value="<?php echo"".$rowData["Id"]."" ?> "> 
+                            <option class="dato" value="<?php echo"".$rowData["Id"]."" ?> "> 
                             <?php echo "".$rowData["nombre"]."";?> </option>
                             
                             <?php 
@@ -174,14 +174,14 @@ $frm = $_POST;
                 </select>
                 <?php endif; ?>  <?php if($socio == "Nosocio") : ?> 
                 <h4>Ingresar Nombre</h4>
-                <input class="form-control form-control-sm" type="text" id="nombre" name="nombre" placeholder="Nombre:"></input></p>
+                <input class="form-control form-control-sm dato" type="text" id="nombre" name="nombre" placeholder="Nombre:"></input></p>
                 <?php endif; ?>
                 <h4>Ingresar Valor Numerico</h4>
-                <input class="form-control form-control-sm" type="number" id="valor_num" name="valor_num" required="true" placeholder="Valor numerico" step=".01"></input></p>
+                <input class="form-control form-control-sm dato" type="number" id="valor_num" name="valor_num" required="true" placeholder="Valor numerico" step=".01"></input></p>
                 <h4>Ingresar Valor</h4>
-                <input class="form-control form-control-sm" type="text" id="valor" name="valor" placeholder="Valor:"></input></p>
+                <input class="form-control form-control-sm dato" type="text" id="valor" name="valor" placeholder="Valor:"></input></p>
                 <h4>Ingresar Motivo</h4>
-                <input class="form-control form-control-sm" type="text" id="motivo" name="motivo" required="true" placeholder="Motivo"></input></p>
+                <input class="form-control form-control-sm dato" type="text" id="motivo" name="motivo" required="true" placeholder="Motivo"></input></p>
                 <button class="btn boton" type="submit" id="submit" name="submit">Agregar Pago</button>
             </form>
             

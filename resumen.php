@@ -128,12 +128,12 @@ if (mysqli_num_rows($result) > 0) {
       <div class="principal--informacion-balance">
         <form action="" method="POST">
           <label for="dia">Balance por fecha (dd/mm/aaaa)</label></br>
-          <input class="" type="text" name="dia" value="<?= $fecha ?>" />
+          <input class="form-control dato" type="text" name="dia" value="<?= $fecha ?>" />
           <input type="submit" class="btn btn-primary btn-sm" name="fecha" value="Balance en esa fecha" />
         </form>
         <form action="" method="POST">
           <label for="dia">Balance por mes </label></br>
-          <input class='' type="month" name="month" value="<?= $month ?>" />
+          <input class="form-control dato" type="month" name="month" value="<?= $month ?>" />
           <input type="submit" class="btn btn-primary btn-sm" name="mes" value="Balance en ese mes" />
         </form>
       </div>

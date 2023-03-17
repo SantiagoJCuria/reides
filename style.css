@@ -187,8 +187,13 @@ label{
     width: 100%;
     color: grey;
     padding: 5px;
-    background-color: white;
-    border: 0;
+    background-color: transparent;
+    border: 1px solid whitesmoke;
+}
+.principal--add-pay select option{
+    width: 100%;
+    color: grey;
+    background-color: #1f1f29;
 }
 .principal--add-pay-contenedor {
     display: flex;
@@ -201,4 +206,8 @@ label{
 }
 .formacion-doble--elemento{
     width: 50%;
+}
+.dato{
+    color: white;
+    background-color: transparent;
 }

@@ -123,29 +123,29 @@ $caracter=$_SESSION['$caracter'];
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="Nombre">Por nombre:</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" value="<?php echo $nombre ?>">
+      <input type="text" class="form-control dato" id="nombre" placeholder="Nombre" name="nombre" value="<?php echo $nombre ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="Id">N° Socio:</label>
-      <input type="text" class="form-control" id="Id" placeholder="N° Socio:" name="Id"  value="<?php echo $id ?>" >
+      <input type="text" class="form-control dato" id="Id" placeholder="N° Socio:" name="Id"  value="<?php echo $id ?>" >
     </div>
     <div class="form-group col-md-3">
     <label for="Valor">Valor</label>
-    <input type="text" class="form-control" id="Valor" placeholder="Valor" name="valor" value="<?php echo $valor ?>">
+    <input type="text" class="form-control dato" id="Valor" placeholder="Valor" name="valor" value="<?php echo $valor ?>">
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="fechaformato">Fecha:</label>
-      <input type="text" class="form-control" id="fechaformato" name="fechaformato" value="<?php echo $fecha ?>">
+      <input type="text" class="form-control dato" id="fechaformato" name="fechaformato" value="<?php echo $fecha ?>">
     </div>
     <div class="form-row">
     <div class="form-group col-md-3">
       <label for="motivo">Motivo</label>
-      <input type="text" class="form-control" id="motivo" name="motivo" value="<?php echo $motivo ?>">
+      <input type="text" class="form-control dato" id="motivo" name="motivo" value="<?php echo $motivo ?>">
     </div>
     <div class="form-group col-md-3">
       <label for="Caracter">Caracter</label>
-      <input type="text" class="form-control" id="p.Caracter" name="Caracter" value="<?php echo $caracter ?>">
+      <input type="text" class="form-control dato" id="p.Caracter" name="Caracter" value="<?php echo $caracter ?>">
     </div>  
 </div>
   <div class="form-group col-md-10">
@@ -179,23 +179,30 @@ $caracter=$_SESSION['$caracter'];
 
     
 
-             <?php
+<?php
              $sql= "SELECT  Id, Id_Socio, STR_TO_DATE(fecha, '%d/%m/%Y') as fechaformato, nombre, val_num, motivo, Caracter from pagos WHERE val_num <> ''";
+             $sqlxcel= "SELECT  * from pagos WHERE val_num <> ''";
              if ($nombre != '' || $id != '' ||$DNI != '' ||$desde != '' ||$fecha != '' ||$caracter != '') {
                 $sql .= " AND Id_Socio LIKE '%$id%' AND nombre LIKE '%$nombre%' 
                 AND fecha LIKE '%$fecha%'  AND Caracter LIKE '%$caracter%' AND motivo LIKE '%$motivo%'";
                // $sql .= "    ";
+               $sqlxcel .= " AND Id_Socio LIKE '%$id%' AND nombre LIKE '%$nombre%' 
+                AND fecha LIKE '%$fecha%'  AND Caracter LIKE '%$caracter%' AND motivo LIKE '%$motivo%'";
                }
              if ($filtrar == "Id_Socio" || $filtrar == "val_num" ) {
                 $sql .= " ORDER BY $filtrar + 0";
+                $sqlxcel .= " ORDER BY $filtrar + 0";
             } else if ($filtrar == "nombre" || $filtrar == "fechaformato"|| $filtrar == "motivo"|| $filtrar == "Caracter" ){
                 $sql .= " ORDER BY $filtrar";
+                $sqlxcel .= " ORDER BY $filtrar";
             }
             if (isset($filtrar)) {
-                $sql .= " $orden"; 
+                $sql .= " $orden";
+                $sqlxcel .= " $orden"; 
             }
                 //echo $sql;
              $result = mysqli_query($conn,$sql);
+             $_SESSION['$excel_pagos'] = $sqlxcel;
             if ($result->num_rows > 0) {
                 echo "<table class='table'><tr><th>   Num. Socio   </th><th>   Nombre   </th><th>   Valor   </th><th>   Fecha   </th><th>   Motivo   </th><th>   Caracter   </th><th>      </th></tr>";
     // output data of each row
@@ -219,6 +226,7 @@ $caracter=$_SESSION['$caracter'];
                     }
               
 ?>
+    <a href="./exportar_pagos.php">Exportar a Excel</a>
     </div>
     </section>
     </body>
