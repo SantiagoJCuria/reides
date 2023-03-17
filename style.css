@@ -209,5 +209,9 @@ label{
 }
 .dato{
     color: white;
+<<<<<<< HEAD
     background-color: transparent;
+=======
+    background-color: black;
+>>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
 }
