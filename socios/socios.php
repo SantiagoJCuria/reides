@@ -153,10 +153,6 @@ $qr=$_SESSION['$qr'];
       <label for="inputZip">Codigo QR</label>
       <input type="text" class="form-control dato" id="s.qr" name="qr" value="<?php echo $qr ?>">
     </div>  
-    <div class="form-group col-md-3">
-      <label for="inputZip">Codigo QR</label>
-      <input type="text" class="form-control" id="s.qr" name="qr" value="<?php echo $qr ?>">
-    </div>  
 </div>
   <div class="form-group col-md-10">
   <button type="submit" id="busqueda" name="busqueda" class="btn btn-primary">Filtrar</button>

@@ -159,84 +159,48 @@ $frm = $_POST;
       <input type="text" class="form-control dato" id="id" placeholder="N° Socio" name="id" require="true" value=<?=$valor_maximo?>>
   
     <label for="nombre" class="form-label">Nombre Completo</label>
-<<<<<<< HEAD
     <input type="Text" class="form-control dato" id="nombre" name="nombre" placeholder="Nombre" require="true">
     
     <label for="domicilio" class="form-label">Domicilio</label>
     <input type="text" class="form-control dato" id="domicilio" placeholder="Domicilio" name="domicilio" require="true">
-=======
-    <input type="Text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" require="true">
-    
-    <label for="domicilio" class="form-label">Domicilio</label>
-    <input type="text" class="form-control" id="domicilio" placeholder="Domicilio" name="domicilio" require="true">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
 
     <div class="formacion-doble">
       <div class="formacion-doble--elemento">
         <label for="localidad" class="form-label">Localidad</label>
-<<<<<<< HEAD
         <input type="text" class="form-control dato" id="localidad" placeholder="Localidad" name="localidad" require="true">
       </div>
       <div class="formacion-doble--elemento">
         <label for="provincia" class="form-label">Provincia</label>
         <input type="text" class="form-control dato" id="provincia" placeholder="Provincia" name="provincia" require="true">
-=======
-        <input type="text" class="form-control" id="localidad" placeholder="Localidad" name="localidad" require="true">
-      </div>
-      <div class="formacion-doble--elemento">
-        <label for="provincia" class="form-label">Provincia</label>
-        <input type="text" class="form-control" id="provincia" placeholder="Provincia" name="provincia" require="true">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
     </div>
     </div>
     
     <div class="formacion-doble">
       <div class="formacion-doble--elemento">
         <label for="telefono" class="form-label">Telefono</label>
-<<<<<<< HEAD
         <input type="text" class="form-control dato" id="telefono" placeholder="Telefono" name="telefono" require="true">
       </div>
       <div class="formacion-doble--elemento">
         <label for="celular" class="form-label">Celular</label>
         <input type="text" class="form-control dato" id="celular" placeholder="Celular" name="celular" require="true">
-=======
-        <input type="text" class="form-control" id="telefono" placeholder="Telefono" name="telefono" require="true">
-      </div>
-      <div class="formacion-doble--elemento">
-        <label for="celular" class="form-label">Celular</label>
-        <input type="text" class="form-control" id="celular" placeholder="Celular" name="celular" require="true">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
       </div>
     </div>
     
     <label for="mail" class="form-label">Mail</label>
-<<<<<<< HEAD
     <input type="text" class="form-control dato" id="mail" placeholder="Mail" name="mail" require="true">
-=======
-    <input type="text" class="form-control" id="mail" placeholder="Mail" name="mail" require="true">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
 
     <div class="formacion-doble">
       <div class="formacion-doble--elemento">
         <label for="DNI" class="form-label">DNI</label>
-<<<<<<< HEAD
         <input type="text" class="form-control dato" id="DNI" placeholder="DNI" name="DNI" require="true">
       </div>
       <div class="formacion-doble--elemento">
         <label for="nacionalidad" class="form-label">Nacionalidad</label>
         <input type="text" class="form-control dato" id="nacionalidad" placeholder="Nacionalidad" name="nacionalidad" require="true">
-=======
-        <input type="text" class="form-control" id="DNI" placeholder="DNI" name="DNI" require="true">
-      </div>
-      <div class="formacion-doble--elemento">
-        <label for="nacionalidad" class="form-label">Nacionalidad</label>
-        <input type="text" class="form-control" id="nacionalidad" placeholder="Nacionalidad" name="nacionalidad" require="true">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
       </div>
     </div>
 
     <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
-<<<<<<< HEAD
     <input type="date" class="form-control dato" id="nacimiento" name="nacimiento" require="true">
     
     <label for="ecivil" class="form-label">Estado civil</label>
@@ -244,15 +208,6 @@ $frm = $_POST;
     
     <label for="profesion" class="col-sm-1 col-form-label">Profesion</label>
     <input type="text" class="form-control dato" id="profesion" placeholder="Profesion" name="profesion" require="true">
-=======
-    <input type="date" class="form-control" id="nacimiento" name="nacimiento" require="true">
-    
-    <label for="ecivil" class="form-label">Estado civil</label>
-    <input type="text" class="form-control" id="ecivil" placeholder="Estado Civil" name="ecivil" require="true">
-    
-    <label for="profesion" class="col-sm-1 col-form-label">Profesion</label>
-    <input type="text" class="form-control" id="profesion" placeholder="Profesion" name="profesion" require="true">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
   
 
   <input class="form-check-input" type="checkbox" value="" id="aceptar">
@@ -266,7 +221,6 @@ $frm = $_POST;
 <h4 class="h5">Completar solo si el socio es menor de edad:</h4>
     
     <label for="apellido-nombre" class="form-label">Apellido y Nombre</label>
-<<<<<<< HEAD
     <input type="text" class="form-control dato" id="apellido-t" placeholder="Nombre y Apellido del tutor" name="apellido-t" placeholder="Apellido">
 
     <label for="telefono-t" class="form-label">Telefono</label>
@@ -289,30 +243,6 @@ $frm = $_POST;
   
     <label for="profesion-t" class="form-label">Profesion</label>
     <input type="text" class="form-control dato" id="profesion-t" placeholder="Profesion del tutor" name="profesion-t">
-=======
-    <input type="text" class="form-control" id="apellido-t" placeholder="Nombre y Apellido del tutor" name="apellido-t" placeholder="Apellido">
-
-    <label for="telefono-t" class="form-label">Telefono</label>
-    <input type="text" class="form-control" id="telefono-t" placeholder="Telefono del tutor" name="telefono-t">
-  
-    <label for="celular-t" class="form-label">Celular</label>
-    <input type="text" class="form-control" id="celular-t" placeholder="Celular del tutor" name="celular-t">
-
-    <label for="DNI-t" class="form-label">DNI</label>
-    <input type="text" class="form-control" id="DNI-t" placeholder="DNI del tutor" name="DNI-t">
-    
-    <label for="nacionalidad-t" class="col-sm-1 col-form-label">Nacionalidad</label>
-    <input type="text" class="form-control" id="nacionalidad-t" placeholder="Nacionalidad del tutor" name="nacionalidad-t">
-
-    <label for="nacimiento-t" class="form-label">Fecha de nacimiento</label>
-    <input type="date" class="form-control" id="nacimiento-t" name="nacimiento-t">
-
-    <label for="ecivil-t" class="form-label">Estado civil</label>
-    <input type="text" class="form-control" id="ecivil-t" placeholder="Estado civil del tutor" name="ecivil-t">
-  
-    <label for="profesion-t" class="form-label">Profesion</label>
-    <input type="text" class="form-control" id="profesion-t" placeholder="Profesion del tutor" name="profesion-t">
->>>>>>> 6c0e544000d753bfa287a9e7f777304b29f1d7c6
 
   <div class="form-check mb-3">
   <input class="form-check-input" type="checkbox" value="" id="aceptar-t">

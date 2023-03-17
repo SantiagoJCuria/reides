@@ -241,7 +241,6 @@ $frm = $_POST;
   <a href="./qr.php" class="btn btn-primary rounded">Generar QR</a>
   </div>
   </form>
-  <a href="./qr.php" class="btn btn-primary rounded">Generar QR</a>
     <?
 
 
